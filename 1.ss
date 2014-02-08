@@ -1,0 +1,5 @@
+(let loop ((i 10))
+   (not  i)
+     (display "stopped")
+     (begin (display (string-append (number->string i) "\n"))
+            (loop (- i 1)))))
