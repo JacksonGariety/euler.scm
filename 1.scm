@@ -9,11 +9,12 @@
   (define sum 0)
   (let loop ()
     (set! n (- n 1))
-    (if (or (= (modulo n 3) 0) (= (modulo n 5) 0))
+    (if (or (zero? (modulo n 3))
+            (zero? (modulo n 5)))
         (set! sum (+ sum n)))
-    (if (> n 0)
-        (loop)
-        sum)))
+    (if (zero? n)
+        sum
+        (loop))))
 
 (display (sum-of-multiples-of-three-or-five-below 1000))
 (exit)
