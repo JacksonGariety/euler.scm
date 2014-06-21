@@ -12,7 +12,7 @@
     (if (or (zero? (modulo n 3))
             (zero? (modulo n 5)))
         (set! sum (+ sum n)))
-    (if (positive?) n)
+    (if (positive? n)
         (loop)
         sum)))
 
