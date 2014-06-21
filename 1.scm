@@ -12,9 +12,14 @@
     (if (or (zero? (modulo n 3))
             (zero? (modulo n 5)))
         (set! sum (+ sum n)))
-    (if (zero? n)
-        sum
-        (loop))))
+    (if (positive?) n)
+        (loop)
+        sum)))
 
 (display (sum-of-multiples-of-three-or-five-below 1000))
 (exit)
+
+;; Note that I switch from using (zero?) to using
+;; (positive?) on line 15. I wanted 'sum to be the
+;; last expression in the method to be clear that
+;; it's what is being returned.
