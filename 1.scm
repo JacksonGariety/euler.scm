@@ -5,15 +5,15 @@
 ;; of these multiples is 23. Find the sum of all the
 ;; multiples of 3 or 5 below 1000.
 
-(define (sum-of-multiples-below n)
+(define (sum-of-multiples-of-three-or-five-below n)
   (define sum 0)
   (let loop ()
     (set! n (- n 1))
+    (if (or (= (modulo n 3) 0) (= (modulo n 5) 0))
+        (set! sum (+ sum n)))
     (if (> n 0)
-        (begin (if (or (= (modulo n 3) 0) (= (modulo n 5) 0))
-                   (set! sum (+ sum n)))
-               (loop))
+        (loop)
         sum)))
 
-(display (sum-of-multiples-below 1000))
+(display (sum-of-multiples-of-three-or-five-below 1000))
 (exit)
