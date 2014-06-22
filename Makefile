@@ -9,3 +9,6 @@
 
 4: ./4.scm
 	@csi -s 4.scm
+
+5: ./5.scm
+	@csi -s 5.scm
