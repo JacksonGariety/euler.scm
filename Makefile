@@ -6,3 +6,6 @@
 
 3: ./3.scm
 	@csi -s 3.scm
+
+4: ./4.scm
+	@csi -s 4.scm

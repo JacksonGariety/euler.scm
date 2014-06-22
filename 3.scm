@@ -12,5 +12,7 @@
 
 (display (largest-prime-factor 600851475143))
 
-;; This solution works rally well because
-;; it only touches each number a single time.
+;; This solution works well because
+;; it only calculates each number a single time.
+;;
+;; SOLUTION: 6857

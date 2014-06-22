@@ -24,3 +24,5 @@
 
 (display (fibonacci-sum 4000000))
 (exit)
+
+;; SOLUTION: 4613732
