@@ -6,14 +6,12 @@
 ;; multiples of 3 or 5 below 1000.
 
 (define (sum-of-multiples-of-three-or-five-below n)
-  (define sum 0)
-  (let loop ()
-    (set! n (- n 1))
-    (if (or (zero? (modulo n 3))
-            (zero? (modulo n 5)))
-        (set! sum (+ sum n)))
+  (let loop ((sum 0) (n (- n 1)))
     (if (positive? n)
-        (loop)
+        (if (or (zero? (modulo n 3))
+                (zero? (modulo n 5)))
+            (loop (+ sum n) (- n 1))
+            (loop sum (- n 1)))
         sum)))
 
 (display (sum-of-multiples-of-three-or-five-below 1000))
