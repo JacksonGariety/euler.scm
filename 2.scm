@@ -13,7 +13,7 @@
 ;; million, find the sum of the even-valued
 ;; terms.
 
-(define (sum-of-fibonacci-to ceiling)
+(define (fibonacci-sum ceiling)
   (let loop ((m 0) (n 1) (sum 0))
     (define o (+ m n))
     (if (<= n ceiling)
@@ -22,5 +22,5 @@
                       sum))
         sum)))
 
-(display (sum-of-fibonacci-to 4000000))
+(display (fibonacci-sum 4000000))
 (exit)

@@ -6,7 +6,7 @@
 ;; multiples of 3 or 5 below 1000.
 
 ;; our method
-(define (sum-of-multiples-of-three-or-five-below n)
+(define (sum-of-multiples-of-three-or-five n)
   (let loop ((sum 0) (n (- n 1)))
     (if (positive? n)
         (loop (if (or (zero? (modulo n 3))
@@ -17,7 +17,7 @@
         sum)))
 
 ;; execute
-(display (sum-of-multiples-of-three-or-five-below 1000))
+(display (sum-of-multiples-of-three-or-five 1000))
 (exit)
 
 ;; Note that I switch from using (positive?) to using
