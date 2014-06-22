@@ -14,7 +14,7 @@
 ;; terms.
 
 (define (sum-of-fibonacci-to ceiling)
-  (let loop ((m 1) (n 1) (sum 0))
+  (let loop ((m 0) (n 1) (sum 0))
     (define o (+ m n))
     (if (<= n ceiling)
         (loop n o (if (even? o)
