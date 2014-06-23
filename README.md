@@ -1,3 +1,3 @@
-# Euler.ss
+# euler.scm
 
-Project Euler problems solved in standard Scheme.
+R5RS Scheme solutions to Project Euler problems. With annotations.
