@@ -28,7 +28,7 @@
 ;; The solution is perfectly elegant in my mind. The entire state
 ;; of the program is contained within the loop and I can visualize
 ;; the difference between the the squares and the sums in my head
-;; simply by looping at the arguments to the loop, and then the
+;; simply by looking at the arguments to the loop, and then the
 ;; falsey part of the if statement.
 ;;
 ;; Now, I'm not sure if the problem was easy, or my solution is
