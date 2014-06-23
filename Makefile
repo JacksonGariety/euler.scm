@@ -12,3 +12,6 @@
 
 5: ./5.scm
 	@csi -s 5.scm
+
+6: ./6.scm
+	@csi -s 6.scm
