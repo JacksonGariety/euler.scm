@@ -1,3 +1,4 @@
+;; Multiples of 3 and 5
 ;; Problem 1
 ;;
 ;; If we list all the natural numbers below 10 that are
@@ -16,9 +17,10 @@
               (- n 1))
         sum)))
 
-;; execute
+;; execution
 (display (sum-of-multiples-of-three-or-five 1000))
-(exit)
+
+;; SOLUTION: 233168
 
 ;; Note that I switch from using (positive?) to using
 ;; (zero?) on line 11. I wanted 'sum to be the last
@@ -29,5 +31,3 @@
 ;; refactored into a named let loop. The let handles
 ;; the scope of sum and n, so that mutation isn't
 ;; necessary, just recursion.
-;;
-;; SOLUTION: 233168

@@ -1,3 +1,4 @@
+;; Even Fibonacci numbers
 ;; Problem 2
 ;;
 ;; Each new term in the Fibonacci sequence is
@@ -13,6 +14,7 @@
 ;; million, find the sum of the even-valued
 ;; terms.
 
+;; implementation
 (define (fibonacci-sum ceiling)
   (let loop ((m 0) (n 1) (sum 0))
     (define o (+ m n))
@@ -22,7 +24,7 @@
                       sum))
         sum)))
 
+;; execution
 (display (fibonacci-sum 4000000))
-(exit)
 
 ;; SOLUTION: 4613732

@@ -1,5 +1,4 @@
 ;; Smallest multiple
-;;
 ;; Problem 5
 ;;
 ;; 2520 is the smallest number that can
@@ -46,7 +45,8 @@
 
 ;; execution
 (display (smallest-multiple 20))
-(exit)
+
+;; SOLUTION: 232792560
 
 ;; This soluton is quite elegant indeed. It
 ;; cheats by using Chicken's math goodies,

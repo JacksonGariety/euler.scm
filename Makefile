@@ -15,3 +15,6 @@
 
 6: ./6.scm
 	@csi -s 6.scm
+
+7: ./7.scm
+	@csi -s 7.scm

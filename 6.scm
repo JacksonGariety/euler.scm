@@ -1,5 +1,4 @@
 ;; Sum square difference
-;;
 ;; Problem 6
 ;;
 ;; The sum of the squares of the first ten natural numbers is,
@@ -23,6 +22,8 @@
         (- (* sums sums) squares))))
 
 (display (sum-square-difference 100))
+
+;; SOLUTION: 25164150
 
 ;; This solution I discovered on acid. It took fifteen minutes.
 ;; The solution is perfectly elegant in my mind. The entire state

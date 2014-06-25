@@ -19,7 +19,8 @@
             (else (loop (- i 1) sum))))))
 
 (display (largest-palindrome-product 100 999))
-(exit)
+
+;; SOLUTION: 906609
 
 ;; Most important note on efficiency here is that
 ;; the loop begins by multiplying the two largest
@@ -31,5 +32,3 @@
 ;; of (strig->list) and (number->string). Slow,
 ;; and somewhat cheating the euler problem. Though
 ;; it does work efficiently.
-;;
-;; SOLUTION: 906609
