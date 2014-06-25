@@ -9,21 +9,28 @@
 
 ;; implementation
 (define (prime n)
-  (let outer ((i 3) (primes '(2)))
-    (if (< (length primes) n)
-        (let inner ((j 0))
-          (let ((item (list-ref primes j)))
-            (if (<= (* item item) i)
-                (if (positive? (modulo i item))
-                    (inner (+ j 1))
-                    (outer (+ i 2) primes))
-                (outer (+ i 2) (foldr cons (list i) primes)))))
-        (list-ref primes (- (length primes) 1)))))
+  (define primes (list 2))
+  (let outer ((i 3) (count 1) (last-pair primes))
+    (if (< count n)
+        (let inner ((remaining primes))
+          (define try (car remaining))
+          (if (<= (* try try) i)
+              (if (positive? (modulo i try))
+                  (inner (cdr remaining))
+                  (outer (+ i 2) count last-pair))
+              (begin (set-cdr! last-pair (list i))
+                     (outer (+ i 2) (+ count 1) (cdr last-pair)))))
+        (car last-pair))))
 
 ;; execution
 (display (prime 10001))
 
 ;; SOLUTION: 104743
+
+;; UPDATE: New solution takes < 1 second!
+;; With help from @sjamaan, the primes list
+;; is now being mutated instead of
+;; iterated/shifted each time. *much* faster.
 
 ;; Wow, this one was quite difficult. I
 ;; spared myself the agony of writing a
