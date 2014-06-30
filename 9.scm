@@ -24,6 +24,8 @@
 ;; execution
 (display (pythagorean-triplet-product 1000))
 
+;; SOLUTION: 31875000
+
 ;; I love this solution. It does so much with so
 ;; little. The variable naming is great as well,
 ;; (a), (b) and (c) corrospond with pythagorean

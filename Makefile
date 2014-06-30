@@ -26,3 +26,6 @@ BIN="/usr/local/bin"
 
 9: ./9.scm
 	$(BIN)/csi -s 9.scm
+
+10: ./10.scm
+	$(BIN)/csi -s 10.scm
