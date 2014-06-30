@@ -27,11 +27,6 @@
 
 ;; SOLUTION: 104743
 
-;; UPDATE: New solution takes < 1 second!
-;; With help from @sjamaan, the primes list
-;; is now being mutated instead of
-;; iterated/shifted each time. *much* faster.
-
 ;; Wow, this one was quite difficult. I
 ;; spared myself the agony of writing a
 ;; painfully-slow implementation by
@@ -62,3 +57,10 @@
 ;; seconds to complete. Also that it has two
 ;; calls to (outer), I feel like there ought
 ;; to be just one.
+;;
+;; UPDATE #1:
+;;
+;; New solution takes < 1 second!
+;; With help from @sjamaan, the primes list
+;; is now being mutated instead of
+;; iterated/shifted each time. *much* faster.
