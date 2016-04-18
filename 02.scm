@@ -14,14 +14,21 @@
 ;; million, find the sum of the even-valued
 ;; terms.
 
+
+
 ;; implementation
 (define (fibonacci-sum ceiling)
-  (let loop ((m 0) (n 1) (sum 0))
-    (define o (+ m n))
-    (if (<= n ceiling)
-        (loop n o (if (even? o)
-                      (+ sum o)
-                      sum))
+  (let loop ((a 1)
+             (b 2)
+             (i 0)
+             (sum 0))
+    (if (<= b ceiling)
+        (loop b
+              (+ a b)
+              (+ i 1)
+              (if (zero? (modulo i 3))
+                  (+ sum b)
+                  sum))
         sum)))
 
 ;; execution

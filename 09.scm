@@ -13,13 +13,11 @@
 
 ;; implementation
 (define (pythagorean-triplet-product sum)
-  (define half-square (/ (expt sum 2) 2))
   (let loop ((a (quotient sum 3)))
-    (define b (/ (- half-square (* sum a)) (- sum a)))
-    (if (inexact? b)
-        (loop (- a 1))
-        (let ((c (- sum b a)))
-          (* b a c)))))
+    (define b (/ (- (/ (expt sum 2) 2) (* sum a)) (- sum a)))
+    (if (integer? b)
+        (inexact->exact (* a b (- sum b a)))
+        (loop (- a 1)))))
 
 ;; execution
 (display (pythagorean-triplet-product 1000))
