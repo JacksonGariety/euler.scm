@@ -15,7 +15,7 @@
   (let loop ((i max) (sum (* max 2)))
     (let ((j (- sum i)))
       (cond ((< i j) (loop max (- sum 1)))
-            ((palindrome? (* i j)) (values (* i j) i j))
+            ((palindrome? (* i j)) (* i j))
             (else (loop (- i 1) sum))))))
 
 (display (largest-palindrome-product 100 999))

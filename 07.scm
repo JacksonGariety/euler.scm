@@ -8,22 +8,42 @@
 ;; What is the 10,001st prime number?
 
 ;; implementation
-(define (prime n)
-  (define primes (list 2))
-  (let outer ((i 3) (count 1) (last-pair primes))
-    (if (< count n)
-        (let inner ((remaining primes))
-          (define try (car remaining))
-          (if (<= (* try try) i)
-              (if (positive? (modulo i try))
-                  (inner (cdr remaining))
-                  (outer (+ i 2) count last-pair))
-              (begin (set-cdr! last-pair (list i))
-                     (outer (+ i 2) (+ count 1) (cdr last-pair)))))
-        (car last-pair))))
+;; (define (prime n)
+;;   (define primes (list 2))
+;;   (let outer ((i 3) (count 1) (last-pair primes))
+;;     (if (< count n)
+;;         (let inner ((remaining primes))
+;;           (define try (car remaining))
+;;           (if (<= (* try try) i)
+;;               (if (positive? (modulo i try))
+;;                   (inner (cdr remaining))
+;;                   (outer (+ i 2) count last-pair))
+;;               (begin (set-cdr! last-pair (list i))
+;;                      (outer (+ i 2) (+ count 1) (cdr last-pair)))))
+;;         (car last-pair))))
 
+(define nth-prime
+  (lambda (nth)
+    (let loop ((candidate 1)
+               (num-found 0))
+      (if (prime? candidate)
+          (if (= num-found nth)
+              candidate
+              (loop (+ candidate 1) (+ num-found 1)))
+          (loop (+ candidate 1) num-found)))))
+
+;; checks if given number is prime
+;; contract: number -> boolean
+(define prime?
+  (lambda (n)
+    (if (even? n)
+        (= n 2)
+        (let loop ((trial-divisor 3))
+          (or (< n (* trial-divisor trial-divisor))
+              (and (not (zero? (remainder n trial-divisor)))
+                   (loop (+ trial-divisor 2))))))))
 ;; execution
-(display (prime 10001))
+(display (nth-prime 10001))
 
 ;; SOLUTION: 104743
 

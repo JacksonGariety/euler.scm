@@ -7,15 +7,16 @@
 ;; multiples of 3 or 5 below 1000.
 
 ;; implementation
-(define (sum-of-multiples-of-three-or-five n)
-  (let loop ((sum 0) (n (- n 1)))
-    (if (positive? n)
-        (loop (if (or (zero? (modulo n 3))
-                      (zero? (modulo n 5)))
-                  (+ sum n)
-                  sum)
-              (- n 1))
-        sum)))
+(define sum-of-multiples-of-three-or-five
+  (lambda (n)
+    (let loop ((sum 0) (n (- n 1)))
+      (if (> n 0)
+          (loop (if (or (= (modulo n 3) 0)
+                        (= (modulo n 5) 0))
+                    (+ sum n)
+                    sum)
+                (- n 1))
+          sum))))
 
 ;; execution
 (display (sum-of-multiples-of-three-or-five 1000))
