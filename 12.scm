@@ -3,9 +3,10 @@
 
 ;; implementation
 
-;; very slow bruteforce function
-;; next step is implement the tau
-;; function!
+;; VERSION 1
+
+;; very slow bruteforce:
+
 ;; (use srfi-1)
 
 ;; (define triangle-with-divisors
@@ -23,6 +24,8 @@
 ;;           i
 ;;           (loop (+ 1 i))))))
 
+;; VERSION 2
+
 ;; an independent fold-left implementation
 (define (foldl func accum lst)
   (if (null? lst)
@@ -31,6 +34,10 @@
 
 ;; decompose our number into primes:
 ;; 4200 -> (2 2 2 3 5 5 7)
+;;
+;; a useful way to wrap your head around it:
+;;
+;; (reduce * 0 (2 2 2 3 5 5 7)) -> 4200
 (define decompose
   (lambda (n)
     (let *decompose ((divisor 2)
@@ -87,7 +94,7 @@
           (loop (+ 1 i))))))
 
 ;; execution
-(display (triangle-with-divisors 500))
+(display (triangle-with-divisors 500)) ;; 76576500
 
 ;; UPDATE #1:
 ;;
