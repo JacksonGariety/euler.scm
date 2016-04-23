@@ -1,5 +1,3 @@
-(define n 103)
-
 (define (digits n)
   (if (zero? n)
       '()
@@ -13,7 +11,7 @@
     (let ((sig (sort (digits (* n m)) <)))
       (cond ((and (= m cap) (equal? sig prev))
              n)
-            ((and (< m cap) (or (equal? prev '()) (equal? sig prev)))
+            ((and (< m cap) (or (null? prev) (equal? sig prev)))
              (loop n (+ m 1) sig))
             (else (loop (+ n 1) 2 '()))))))
 
