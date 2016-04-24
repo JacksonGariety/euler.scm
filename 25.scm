@@ -17,4 +17,4 @@
         i))
   (fibonacci 0 1 1))
 
-(display (n-digit-fibonacci 1000))
+(display (n-digit-fibonacci 9))
