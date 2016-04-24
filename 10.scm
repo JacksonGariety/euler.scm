@@ -6,17 +6,16 @@
 ;; Find the sum of all the primes below two million.
 
 ;; dependencies
-(use srfi-1)
+;; (import (srfi 1))
 
 ;; implementation
-(define (primes-below max)
+(define (primes-below cap)
   (define primes (list 2))
   (let outer ((i 3) (count 1) (last-pair primes))
-    (if (< i max)
+    (if (< i cap)
         (let inner ((remaining primes))
-          (define try (car remaining))
-          (if (<= (* try try) i)
-              (if (positive? (modulo i try))
+          (if (<= (* (car remaining) (car remaining)) i)
+              (if (positive? (modulo i (car remaining)))
                   (inner (cdr remaining))
                   (outer (+ i 2) count last-pair))
               (begin (set-cdr! last-pair (list i))
@@ -24,7 +23,7 @@
         primes)))
 
 ;; execution
-(display (reduce + 0 (primes-below 2000000)))
+(display (apply + 0 (primes-below 2000000)))
 
 ;; SOLTUION: 142913828922
 
