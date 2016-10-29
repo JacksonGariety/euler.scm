@@ -11,6 +11,10 @@
 ;; which a + b + c = 1000.
 ;; Find the product abc.
 
+(import (scheme base)
+        (scheme write)
+        (scheme r5rs))
+
 ;; implementation
 (define (pythagorean-triplet-product sum)
   (let loop ((a (quotient sum 3)))
@@ -22,7 +26,7 @@
 ;; execution
 (display (pythagorean-triplet-product 1000))
 
-;; SOLUTION: 31875000
+;; solution: 31875000
 
 ;; I love this solution. It does so much with so
 ;; little. The variable naming is great as well,

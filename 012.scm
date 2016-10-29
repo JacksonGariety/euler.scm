@@ -26,6 +26,9 @@
 
 ;; VERSION 2
 
+(import (scheme base)
+        (scheme write))
+
 ;; an independent fold-left implementation
 (define (foldl func accum lst)
   (if (null? lst)
@@ -74,13 +77,14 @@
 (define tau
   (lambda (n)
     (foldl (lambda (acc pair)
-             (define e (cdr pair))
+           (define e (cdr pair))
              (* (+ 1 e) acc))
            1
            (unique-prime-factor-signature n))))
 
 ;; increment i by 1 until (tau (triange i))
-;; it more than the cap as defined in the
+
+;; is more than the cap as defined in the
 ;; project euler problem (which in this case is
 ;; 500). It works for any cap, though!
 (define triangle-with-divisors
